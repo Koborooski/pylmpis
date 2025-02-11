@@ -111,6 +111,12 @@ class misc(commands.Cog):
 
     ############################################################### Gamer Slash Command
 
+    @app_commands.command(name = "dodger", description = "Chooses wether to dodge or not."
+    async def dodger(self, interaction: discord.Interaction, mins:int = 0) -> None:
+        dodgeChance = 8
+        noDodgeChance = 2
+        await interaction.response.send_message(random.choice(['Dodge!'] * dodgeChance + ['No Dodge'] * noDodgeChance)
+    
     # Pings the server whenever the timer is set if set, otherwise just pings everyone
     @app_commands.command(name = "gamer", description = "Pings @everyone. Can be set for a time.")
     async def gamer(self, interaction: discord.Interaction, mins:int = 0) -> None:
