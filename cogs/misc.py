@@ -47,6 +47,27 @@ class misc(commands.Cog):
         if message.author == self.client.user: # Ignore bot messages
             return
 
+        # "Optimization"
+        retMes = ""
+        match message.author.name:
+            case "pandadj4":
+                insultList = ["KYS", "FUCK YOU", "UGLASS", "DISGUSTING BIG ASS NOSE CLOWN", "GO GET YOUR DICK SUCKED BY YOUR UGLY ASS GIRLFRIEND", "^^🤡" ]
+                retMes = random.choice(insultList)
+            case "bobert.exe":
+                retMes = "46"
+            case "RustENailz":
+                retMes = "🤓"
+            case "hutner.":
+                retMes = "PLYMPIS BOT, HACKED BY C@RL0S3XH@V3R"
+            case "nosmamson":
+                retMes = ":sniffler:"
+            case "koborooski":
+                retMes = ":kiss:"
+            case:
+                retMes = ""
+        if retMes != "":
+            await message.channel.send(retMes)
+            
         if 'real' in message.content.lower():
             await message.channel.send('real')
 
